@@ -1,0 +1,17 @@
+
+/**
+ * One hexadecimal digit as a char-value
+ * in the range '0'-'9', 'a'-'f', and 'A'-'F'.
+ * 
+ * @author pape
+ */
+public abstract class AbstractHexadecimalDigit : HexadecimalDigit {
+
+	protected char digit;
+
+    public abstract int GetDecimalValue();
+
+    public void SetDigit(char digit) {
+		this.digit = digit;
+	}
+}

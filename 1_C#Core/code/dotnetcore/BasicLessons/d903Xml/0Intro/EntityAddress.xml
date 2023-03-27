@@ -1,0 +1,13 @@
+<?xml version='1.0' ?>
+<!DOCTYPE Address >
+<!-- Sample XML Page -->
+<Address>
+	<name >venkat &amp; krishnan&apos;s   &#169; </name>
+	<phone>91-044 &#65;
+		<mobile>1222312321</mobile>
+		<land> 43543543 <![CDATA[100<200 ]]>
+		</land>
+	</phone>
+	<test> 50&lt;100 &gt;75   </test>
+	<email id="a1@yahoo.com" aid="abc@xyz"/>
+</Address>

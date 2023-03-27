@@ -1,0 +1,25 @@
+﻿public abstract class Enum : ValueType, IComparable, IFormattable, IConvertible
+
+Methods:
+--------
+CompareTo(Object)	
+	Compares this instance to a specified object and returns an indication of their relative values.
+Format(Type, Object, String):
+	Converts the specified value of a specified enumerated type to its equivalent string representation according to the specified format.
+GetName(Type, Object)	
+	Retrieves the name of the constant in the specified enumeration that has the specified value.
+
+GetNames(Type)	
+	Retrieves an array of the names of the constants in a specified enumeration.
+GetValues(Type)	
+	Retrieves an array of the values of the constants in a specified enumeration.
+HasFlag(Enum)	
+	Determines whether one or more bit fields are set in the current instance.
+
+IsDefined(Type, Object)
+	Returns an indication whether a constant with a specified value exists in a specified enumeration.
+	public static bool IsDefined(
+		Type enumType,
+		object value
+	)
+

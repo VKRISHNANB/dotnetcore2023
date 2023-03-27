@@ -1,0 +1,15 @@
+﻿MoneySaver Corporation bank is conducting interviews for the posts of 
+clerks and Probationary Officers. 
+Various applicants are applying for the required post by filling 
+an application form (printed form). 
+The bank performs the selection process of the applicants and 
+the selected applicants are chosen as suitable candidates. 
+
+The bank wants to keep track of the applicants and candidates 
+by creating an application in .Net. 
+
+Steve, the programmer in the bank is assigned the task of developing 
+the application. 
+The application must accept the applicantID, applicantName, and interviewDate 
+as command-line arguments. Help Steve to develop an application that enables 
+MoneySaver Corporation bank to manage the data. 

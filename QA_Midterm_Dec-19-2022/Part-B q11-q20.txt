@@ -1,0 +1,89 @@
+11. What is a primary key? Differences between a primary key and unique key.
+ans: The PRIMARY KEY constraint uniquely identifies each record in a database table.
+     Difference between Primary key and Unique key 
+	-> Primary key cannot have null values whereas in Unique key we can save null values 
+	-> We can have only one Primary key in a table, we can have more than one unique key in a table 
+	-> Primary key creates a clustered index and unique key performs a non clustered index 
+
+12. What are joins? List all the joins you know.
+ans: SQL joins are used to query data from two or more tables, based on a relationship between certain columns in these tables.
+     Types of Joins
+   	 * Inner Join
+ 	 * Left Join
+   	 * Right Join
+  	 * Full Join
+  	 * Cross Join
+
+13. What is a subquery?
+ans: Query within a query is known as SubQuery
+
+14. Write a query to find the Employee who gets the 6th highest salary.
+ans: SELECT TOP 1 salary FROM (SELECT DISTINCT TOP 6 salary FROM
+employee ORDER BY salary DESC) a ORDER BY salary
+
+
+15. What are Indexes? How many indexes can there be in a table? Explain each type of 
+index? 
+ans: Indexing is a mechanism to access value without performing a full table scan. Indexes are used in large tables 
+     There can be one Clustered Index and maximum of 249 Non Clustered Index
+     Types of Indexes 
+	  1. Clustered Index 
+		- Only one per Table 
+		- Based on Primary Key or Unique Key
+	  2. Non Clustered Index 
+		- Max 249 per table 
+		- Created for Master tables 
+
+16. What are stored procedures
+ans: A Stored Procedure is a precompiled collection of SQL statements. Every SP is a method.
+     Syntax for creating Stored Procedure 
+	CREATE PROCEDURE
+	AS
+	BEGIN
+		....
+		....
+	END	
+	EXEC 
+
+17. Difference between SP and Functions
+ans: 		Function								Stored Procedure 
+
+	Functions compute a value				     Stored Procedure perform a Task 
+	They can be called in a SQL command		           They cannot be called in SQL commands 
+	They cannot be called from Web Browser		     They can be called Web Browser 
+      Scalar value					           More than one values using out
+
+ 
+18. What is a view? When to use them?
+ans: View is a Virtual table that contains data from multiple tables.
+	Syntax for creating a View:
+	  CREATE VIEW <ViewName>
+	  AS
+	  ....
+     We use a VIEW just like we use an ordinary table.
+
+
+
+19. What are Temp Table and Table Variables? Where are they created? 
+ans: Temp table - are used for testing data or for intermediate transformation of data. 
+     Scope of temp table 
+	1. Either on drop of the temp table or 	
+	2. On close of the session 
+     Temp Variable - are also used for holding data temporarily
+     Scope of Temp Variable: 
+	With in the Stored Procedure in which the temp variable is defined 
+
+Temp Table, and Temp variables--both are created in TempDB and not in memory 
+
+20. How to handle Exceptions in Stored Procedures
+ans: We use Try catch block to handle exceptions that occur in a stroed procedures
+     Syntax:
+	Exception Handling
+ 	BEGIN TRY
+ 	  ....// code that may cause  an exception   
+
+	END TRY
+	BEGIN CATCH
+ 	  ....// code to handle the exception
+	END CATCH;
+ 

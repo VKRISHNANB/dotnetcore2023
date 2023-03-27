@@ -1,0 +1,31 @@
+public static void Main(){
+SqlConnection con=new sqlConnection(); 
+con.ConnectionString="server=doit;initial catalog=northwind;uid=sa;pwd=sa";
+con.Open();
+SqlCommand cmd;
+cmd=con.CreateCommand();
+cmd.CommandText="select * from customers";
+SqlDataAdapter da=new SqlDataAdapter();
+da.SelectCommand=cmd;
+DataTable custdt=new DataTable();
+custdt.TableName="customers";
+da.Fill(custdt);
+
+custdt.PrimaryKey=new DataColumn[]{
+		custdt.Columns["customerid"]   };
+string custid;
+System.Data.DataRow custrs;
+try
+{
+custid =textBox1.Text;
+custrs=custdt.Rows.Find(custid);
+}catch(Exception err)
+{
+MessageBox.Show(err.Message);
+}
+finally
+{
+con.Close();
+}
+}
+

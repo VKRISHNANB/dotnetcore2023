@@ -1,0 +1,16 @@
+<?xml version='1.0' ?>
+<!DOCTYPE Address >
+<!-- Sample XML Page -->
+<Address>
+	<contact>
+		<name type="String">venkat Krishnan</name>
+		<phone>
+			91-044
+			<mobile type="double">122221</mobile>
+			<land type="double"> 43543543 
+			   <![CDATA[100<200 ]]>
+			</land>
+		</phone>
+		<email id="a1@yahoo.com" aid="abc@xyz"/>
+	</contact>
+</Address>

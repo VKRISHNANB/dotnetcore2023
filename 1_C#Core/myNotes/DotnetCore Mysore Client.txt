@@ -1,0 +1,23 @@
+.Net Core
+==========
+Overview
+Environment Setup
+New Project
+Project Layout
+Project.Json
+Configuration
+Middle-ware
+Exceptions
+Static Files
+Setup MVC
+MVC Design Pattern
+Routing
+Attribute Routes
+Action Results
+Razor Views
+Using the Entity Framework
+ASP.NET Core Authentication and Authorization
+Working with Validation and Logging
+Implementing Paging, Filtering, and Searching
+Working with Caching and Concurrency
+Protecting, Testing, and Documenting API

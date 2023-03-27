@@ -1,0 +1,6 @@
+﻿Create an Interface IMobilePhone with the following Methods
+void MakeaCall();
+void SendSMS();
+void AddContact();
+
+Implement the interface in a Class GalaxyA8

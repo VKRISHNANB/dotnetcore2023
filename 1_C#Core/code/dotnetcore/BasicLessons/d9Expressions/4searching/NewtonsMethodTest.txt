@@ -1,0 +1,24 @@
+package de.hska.java.exercises.searching;
+
+import de.hska.java.exercises.objects.Polynomial;
+import junit.framework.TestCase;
+
+/**
+ * JUnit test class for finding a zero of a polynomial with NewtonsMethod.
+ * 
+ * @author pape
+ *
+ */
+public class NewtonsMethodTest extends TestCase {
+
+	public void testGetZero() {
+		Polynomial polynomial = new Polynomial(new double[]{1.0, 0.0, -1.0});
+		NewtonsMethod newtonsMethod = new NewtonsMethod(polynomial);
+		
+		assertEquals(1.0, newtonsMethod.getZero(2.0, 0.00001), 0.00001);
+		assertEquals(-1.0, newtonsMethod.getZero(-2.0, 0.00001), 0.00001);
+	}
+	
+	
+
+}

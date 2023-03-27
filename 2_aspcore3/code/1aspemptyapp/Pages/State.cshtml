@@ -1,0 +1,35 @@
+﻿@page
+@model aspemptyapp.Pages.StateModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "State Management";
+}
+<div>
+    <form method="post">
+        <div>
+            <label asp-for="Name">Name</label>
+            <input asp-for="Name" placeholder="Enter name" />
+        </div>
+        <div>
+            <label>City</label>
+            <input name="city" placeholder="Enter City" />
+        </div>
+        <div><input type="submit" asp-page-handler="Set" name="btn1" value="Set" /></div>
+        <div><input type="submit" asp-page-handler="Get" name="btn1" value="Get" /></div>
+        <div><input type="submit" asp-page-handler="PageA" name="btnPageA" value="PageA" /></div>
+    </form>
+</div>
+<div>
+    @{
+        if (ViewData["result"] != null)
+        {
+            String result = ViewData["result"].ToString();
+            String[] data = result.Split("\n");
+            foreach (String s in data)
+            {
+                <p>@s</p>
+            }
+        }
+    }
+
+</div>

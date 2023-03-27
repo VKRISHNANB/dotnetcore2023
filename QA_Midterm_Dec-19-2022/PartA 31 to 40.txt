@@ -1,0 +1,79 @@
+31. Explain ACID rule of thumb for transactions.
+
+     the acronym ACID refers to the four key properties of a transaction: 
+
+			Atomicity -  In an application that transfers funds from one account to another, 
+					  the atomicity property ensures that, if a debit is made successfully 
+					  from one account, the corresponding credit is made to the other account.
+		    
+	 	    Consistency - Data is in a consistent state when a transaction starts and when it ends.
+					 in an application that transfers funds from one account to another, 
+					 the consistency property ensures that the total value of funds in both the accounts 
+                            is the same at the start and end of each transaction.
+
+		     Isolation - The intermediate state of a transaction is invisible to other transactions.
+					 in an application that transfers funds from one account to another, 
+					 the isolation property ensures that another transaction sees the transferred funds in one account or the other, but not in both, nor in neither.
+
+		    Durability - After a transaction successfully completes, changes to data persist and are not undone, even in the event of a system failure. 
+
+				      in an application that transfers funds from one account to another, 
+					the durability property ensures that the changes made to each account will not be reversed.
+
+32. What is a connection string? What are the parameters of the Connection String, and what do they define? 
+    
+    A connection string is a string that contains information about a data source (usually a database engine), as well as the information necessary to connect to it.
+    To connect to a database, the application provides a connection string which specifies parameters such as the host, the username, the password.
+
+33. What’s the data provider name to connect to MSSQL Server database? 
+
+    Microsoft.data.SqlClient. 
+
+34.What is Connection Pooling?
+
+   Connection pooling is a technique of creating and managing a pool of connections that are ready for use by any thread that needs them.
+    Connection pooling can greatly increase the performance of your Java application, while reducing overall resource usage.
+
+35. What are the three methods of the Command Object? Explain when to use them. 
+
+     Execute : Executes the queries, stored procedures
+     Cancel : Stops the method execution
+     CreateParameter : To create a parameter object.
+
+     they are used to pass values to SQL Statements.
+    
+36. What is the purpose of Parameters in a Command Text? 
+
+    The parameter is an output parameter. The parameter represents a return value from an operation such as a stored procedure, built-in function, or user-defined function.
+    
+37. What are the best practices to be used while using ADO.NET? 
+
+   1. Use the using statement for disposing of resources
+   2. Avoid executing multiple queries in a single command
+   3. Always explicitly close connections when finished with them
+   4. Implement connection pooling to reduce database round-trips
+   5. Make use of stored procedures and parameterized queries
+   6. Define transactions to ensure data integrity
+   7. Take advantage of asynchronous programming whenever possible
+   8. Be aware of potential SQL injection attacks
+   9. Leverage the ADO.NET Entity Framework
+   10. Utilize bulk operations for inserting large amounts of data
+
+38. What is the role of IEnumerable? 
+
+   Enumarables are iterators in java. They are used to access data inside a datastructure like list,map,queue. IEnumarable is an interface in C# so that the collection can implemet the interface so we can access the data by looping.
+   This works for read-only access to a collection that implements that IEnumerable can be used with a foreach statement
+ 
+39. Difference between normal collection and Generic Collection? 
+
+    The generic collection classes can be used to overcome this issue. Generic collections store elements internally in arrays of their actual types. 
+    Therefore, type casting is not required.
+    
+    Normal collection- in collections we need not mention the datatype
+    Generic collection-we have to mention the datatype specifically 
+    Generic collections are faster compared to normal collections. 
+    Generic collections gets checked only during the compile time
+
+
+40.Argument cannot be null Exception.
+

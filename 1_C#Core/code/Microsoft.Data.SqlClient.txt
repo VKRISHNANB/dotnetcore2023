@@ -1,0 +1,13 @@
+Microsoft.Data.SqlClient
+ Dependencies
+.NETCoreApp 2.1
+
+Microsoft.Identity.Client (>= 3.0.8)
+Microsoft.IdentityModel.JsonWebTokens (>= 5.5.0)
+Microsoft.IdentityModel.Protocols.OpenIdConnect (>= 5.5.0)
+Microsoft.Win32.Registry (>= 4.5.0)
+runtime.native.System.Data.SqlClient.sni (>= 4.4.0)
+System.Configuration.ConfigurationManager (>= 4.5.0)
+System.Runtime.Caching (>= 4.5.0)
+System.Security.Principal.Windows (>= 4.5.0)
+System.Text.Encoding.CodePages (>= 4.5.0)

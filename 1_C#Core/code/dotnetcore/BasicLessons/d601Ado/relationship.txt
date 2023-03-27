@@ -1,0 +1,21 @@
+SqlDataAdapter1.Fill(dataSet1, "Customers")
+SqlDataAdapter2.Fill(dataSet1, "Orders")
+SqlDataAdapter3.Fill(dataSet1, "Order Details")
+
+DataTable custDt=dataSet1.Tables[0];
+DataTable OrdDt=dataSet1.Tables[1];
+DataTable OrdDetailsDt=dataSet1.Tables[2];
+DataRelation dr=new DataRelation("CustOrdRel",custDt.Columns[0],
+OrdDt.Columns[1]);
+dataSet1.Relations.Add(dr);
+dr=new DataRelation("ordDtlRel",OrdDt.Columns[0],
+OrdDetailsDt.Columns[0]);
+dataSet1.Relations.Add(dr);
+
+dataGrid1.DataSource=dataSet1;
+
+}
+
+
+
+

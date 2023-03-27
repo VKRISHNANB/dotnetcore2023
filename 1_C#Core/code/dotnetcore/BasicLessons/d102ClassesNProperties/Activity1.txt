@@ -1,0 +1,10 @@
+﻿ABC bank offers services to its various customers. 
+The bank has various branches all over the country and 
+therefore each of the branches has a unique id. 
+The bank stores the details of its customers, 
+such as customer name, account number, address, phone number, and e-mail address. 
+In addition, the bank stores the various details of its employees, 
+such as employee name, employee id, address, phone number, and e-mail id. 
+The bank offers its customers with a choice of accounts, such as savings and current account. 
+
+Identify the various classes and their attributes.

@@ -1,0 +1,17 @@
+﻿@page
+@model aspemptyapp.Pages.CartModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Cart";
+}
+<div>
+    <form asp-page="Payment" method="post">
+       @* @Html.AntiForgeryToken()*@
+        <div>
+            <label>Card Name</label>
+            <input name="creditcard" placeholder="Enter Credit Card Name" />
+        </div>
+        <input type="submit" value="Buy" />
+    </form>
+</div>

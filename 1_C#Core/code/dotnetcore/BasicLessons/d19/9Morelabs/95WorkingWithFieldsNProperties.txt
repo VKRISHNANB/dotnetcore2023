@@ -1,0 +1,16 @@
+1. Create a Class Employee
+2. Add the following fields as private:
+	empId, name, address, age, city, salary
+3. Add properties to these field
+4. Value for empId must be greater than 0 and less than 5000
+5. Name must have atleast 3 char and not more than 25 chars
+6. Name must have only alphabets and space. Must not contain any other char
+7. Adrress must have atleast 5 char and not more than 25 chars
+8. Age must be greater than 23 and lesser than 60
+9. City must be equal to "NY" or "CA" or "WA" or "FL" 
+10 Salary must be more than 5000 . It must be multiple of 50's.
+
+11. Add the following Methods:
+	startWork()
+	stopWork()
+	

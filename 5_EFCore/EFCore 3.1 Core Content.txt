@@ -1,0 +1,25 @@
+Creating Your First App Using EF Core 3.1
+27m 44s
+
+Controlling Database Creation and Schema Changes
+19m 55s
+
+Mapping Many-to-Many and One-to-One Relationships
+14m 23s
+
+Interacting with Your EF Core Data Model
+37m 23s
+
+Interacting with Related Data
+38m 46s
+
+Working with Views and Stored Procedures and Raw SQL
+19m 52s
+
+Using EF Core with ASP.NET Core
+28m 28s
+
+Testing with the InMemory Provider Instead of a Real Database
+
+
+

@@ -1,0 +1,83 @@
+
+21. Can you implement multiple interfaces?
+
+ Yes, it is possible to implement multiple interfaces in C#. 
+In C#, a class can implement multiple interfaces by simply listing all of the interfaces that it implements, 
+separated by commas, in the class definition.
+
+22. What’s the difference between an interface and abstract class?
+  Interfaces cannot contain implementation code, while abstract classes can.
+A class can implement multiple interfaces, but it can only inherit from a single abstract class.
+Interfaces are used to specify a set of methods that a class must implement, while abstract classes are used to provide a common base class for one or more derived classes.
+Interfaces are typically used to define a common behavior that can be shared by multiple unrelated classes, while abstract classes are used to define a common base class for a hierarchy of classes.
+
+23. What’s the difference between System.String and System.Text.StringBuilder classes?
+ System.String is a class in the .NET framework that represents a string of Unicode characters. 
+ It is immutable, which means that once a string object is created, its value cannot be changed.
+ Any operation that appears to modify a string object actually creates a new string object with the modified value.
+
+ System.Text.StringBuilder is a class in the .NET framework that represents a mutable string of Unicode characters.
+ It allows you to efficiently modify a string by appending, 
+ inserting, or deleting characters, without the need to create a new string object each time.
+
+24. Can you store multiple data types in System.Array?
+   yes it is also possible .By creating an array of objects, which can store elements of any type.
+   For example:object[] objects = new object[5];
+   
+25. Which is the .NET collection type that allows the retrieval of data by a unique key?
+
+    Using both Dictionary and hashTable can retrive unique key 
+    but hashtable is faster than dictonary
+
+26. Will finally block get executed if the exception had not occurred?
+
+    Yes, the finally block will be executed regardless of whether an exception has occurred 
+
+27. Can multiple catch blocks be executed?
+    
+    No,multiple catch blocks cannot be executed. 
+    Once first catch block is catched, it will not read the next block.
+
+
+28. What’s the role of the DataReader class in ADO.NET connections?
+
+    The Data Reader allows you to import data from text files an ODBC, OLE DB or OLE DB for OLAP (ODBO) source into a Board database.
+    A DataReader protocol defines how the external data should be imported into Board database and mapped to entities and InfoCubes; i.e. it defines what fields of a relational database table (or file) should be fed into what entities and InfoCubes.
+
+29. Write a program to break the following String into an array of Strings, so that each day is a 
+String:
+String weekdays = “Sun;Mon;Tue;Wed;Thur;Fri;Sat”;
+Also display count of days.
+
+public class ClassA{
+    public static void Main(string[] args)
+    {
+     String s = "Sun;Mon;Tue;Wed;Thur;Fri;Sat";
+            count = 0;
+            String[] a = s.Split(";");
+
+ 
+
+            foreach (String i in a)
+            {
+                count++;
+            }
+              Console.WriteLine(count);   
+
+          }
+
+ 
+
+        }
+
+ 
+
+30. What is the wildcard character in SQL? Write the select statement to query the Employees 
+table, and list all employees whose name starts with La
+
+A wildcard character is used to substitute one or more characters in a string.
+Wildcard characters are used with the LIKE operator.
+ The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.
+% - bl% ( finds bl, black, blue, and blob)
+_ - h_t (finds hot, hat, and hit)
+[]- h[oa]t (finds hot and hat, but not hit)

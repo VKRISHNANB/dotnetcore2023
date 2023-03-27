@@ -1,0 +1,15 @@
+﻿sizeof(sbyte)	1
+sizeof(byte)	1
+sizeof(short)	2
+sizeof(ushort)	2
+sizeof(int)	4
+sizeof(uint)	4
+sizeof(long)	8
+sizeof(ulong)	8
+sizeof(char)	2 (Unicode)
+sizeof(float)	4
+sizeof(double)	8
+sizeof(decimal)	16
+sizeof(bool)	1
+For all other types, including structs, the sizeof operator can be used only in unsafe code blocks. Although you can use the Marshal.SizeOf method, the value returned by this method is not always the same as the value returned by sizeof. Marshal.SizeOf returns the size after the type has been marshaled, whereas sizeof returns the size as it has been allocated by the common language runtime, including any padding.
+

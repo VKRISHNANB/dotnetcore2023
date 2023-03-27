@@ -1,0 +1,86 @@
+﻿11. What’s the top .NET class that everything is derived from? 
+
+Ans: Object class inside the System is the base class from where everything is derived. 
+
+-------------------------------------------------------------------------
+	
+12. How’s method overriding different from overloading? 
+
+Ans: In Method Overriding, we will have the same method name and same parameters in both 
+base class and the derived class. In Method Overloading, we will have the same method 
+
+name with different parameters in the same class. Method Overriding is a runtime 
+
+polymorphism and method overloading is a compile time polymorphism. 
+
+-------------------------------------------------------------------------
+
+13. What does the keyword virtual mean in the method definition? 
+
+Ans: In C# by default, all the methods are not virtual. The virtual keyword in the method 
+
+definition is used to mention that the method and variables
+
+are marked as virtual in base class and we can override and change the definition 
+
+of the method 
+
+-------------------------------------------------------------------------
+
+14. Can you declare the override method static while the original method is non-static? 
+
+Ans: No. We cannot change the overridden methods to static while the original method in 
+
+the base class is non-static. 
+
+-------------------------------------------------------------------------
+
+15. Can you override private virtual methods? 
+
+Ans: No, we can’t have private virtual methods in a class so it can’t be overridden. 
+
+-------------------------------------------------------------------------
+
+16. Can you prevent your class from being inherited and becoming a base class for some other classes? 
+
+Ans: Marking the class as sealed prevents your class from being inherited. Also marking all the 
+
+constructors of the class as private can prevent the class from being inherited. 
+
+-------------------------------------------------------------------------
+
+17. Can you allow class to be inherited, but prevent the method from being over-ridden? 
+
+Ans: Yes. In the base class while declaring the method don’t use the keyword virtual. Only virtual 
+
+methods can be overridden in C#. 
+
+-------------------------------------------------------------------------
+
+18. What’s an abstract class? 
+
+Ans: The classes that are marked as abstract are abstract classes. Abstract class must be inherited. 
+
+The purpose of marking a class to be abstract is to instantiate it only using the derived class. 
+
+An object for the parent class will be created even being abstract if it is instantiated with the 
+
+child class. Abstracts class can have both normal methods and abstract methods. 
+
+-------------------------------------------------------------------------
+19. What’s an interface? 
+
+Ans: An interface is a contract/promise made by a class. Interface is like pure abstraction. An 
+
+interface is a abstract class and it can only have abstract methods in it. Any class that implements 
+
+the interface must implement the methods, properties in the interface. 
+
+-------------------------------------------------------------------------
+20. Why can’t you specify the accessibility modifier for methods inside the interface? 
+
+Ans: An interface is a contract/promise made by a class. The purpose of having an interface is to 
+
+implement its methods using a class. By default all methods are public in interface.
+
+ 

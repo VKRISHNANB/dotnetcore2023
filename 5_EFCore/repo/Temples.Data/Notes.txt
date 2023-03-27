@@ -1,0 +1,32 @@
+﻿Migration (Code First)
+Set the console application as the startup project
+
+Add the following package (powershell) to the console application: 
+	Microsoft.EntityFrameworkCore.Tools
+
+Load the Package Manager Console
+	>Tools>Nuget Package Manager > Package Manager Console
+
+Set the Default Project in Package Manager Console to 
+the class library Project where the DBContext is present
+
+For help on Powershell commands: 
+	PM>get-help entityframework
+
+add-migration
+Run the "add-migration" command in the Package Manager Console
+	PM> Add-Migration Init
+
+Update-Database
+	pm>Update-Database -verbose
+This command will create the Database and Tables using the info from 
+the migration file
+If there is a change in the schema of the Entities , 
+then future run of update-database will check the snapshot file and 
+will apply the new modifications to the tables.
+
+Script-Migration
+	pm> Script-Migration
+will create the relevant SQL file, in this case T-SQL. 
+This SQL can be executed on the production SQL Server database by the Database expert, 
+and if required can even make a few changes to the script. 

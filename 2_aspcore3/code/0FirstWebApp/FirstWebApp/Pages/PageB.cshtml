@@ -1,0 +1,27 @@
+﻿@page
+@model FirstWebApp.Pages.PageBModel
+@{
+    ViewData["Title"] = "PageB";
+}
+<div class="text-center">
+    <h1 class="display-4">PageB</h1>
+</div>
+<form method="post">
+    <div class="container">
+        <div>
+            <label for="txtName">Name</label>
+            <input id="txtName" name="txtName"
+                   placeholder="Enter Name" />
+        </div>
+        <div>
+            <label for="txtCity">City</label>
+            <input id="txtCity" name="txtCity"
+                   placeholder="Enter City" />
+        </div>
+        <input type="submit" name="btnsubmit" value="Click" />
+    </div>
+</form>
+<div class="container">
+    <div>  Name: @ViewData["name"];</div>
+    <div> City: @ViewData["city"];</div>
+</div>

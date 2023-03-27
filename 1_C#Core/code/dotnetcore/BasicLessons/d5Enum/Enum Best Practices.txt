@@ -1,0 +1,10 @@
+﻿Enumeration best practices
+We recommend that you use the following best practices when you define enumeration types:
+
+If you have not defined an enumeration member whose value is 0, consider creating a None enumerated constant. By default, the memory used for the enumeration is initialized to zero by the common language runtime. Consequently, if you do not define a constant whose value is zero, the enumeration will contain an illegal value when it is created.
+
+If there is an obvious default case that your application has to represent, consider using an enumerated constant whose value is zero to represent it. If there is no default case, consider using an enumerated constant whose value is zero to specify the case that is not represented by any of the other enumerated constants.
+
+Do not specify enumerated constants that are reserved for future use.
+
+When you define a method or property that takes an enumerated constant as a value, consider validating the value. The reason is that you can cast a numeric value to the enumeration type even if that numeric value is not defined in the enumeration.

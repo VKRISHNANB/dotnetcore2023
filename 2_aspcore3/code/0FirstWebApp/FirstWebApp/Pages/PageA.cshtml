@@ -1,0 +1,25 @@
+﻿@page
+@model FirstWebApp.Pages.PageAModel
+@{
+    ViewData["Title"] = "PageA";
+}
+<div class="text-center">
+    <h1 class="display-4">PageA</h1>
+</div>
+<div>
+    <h1>@ViewData["name"] </h1>
+    <div class="col-md-4">
+        <form method="post">
+            @*taghelper*@
+            @Html.LabelFor(model => model.Name)
+
+            @*@Html.EditorFor(model => model.Name,
+                       new { htmlAttributes = new { @class = "form-control" } }
+                       )*@
+            <input type="text" asp-for="Name" />
+            <input type="submit" name="btnsubmit" value="Hitme" />
+        </form>
+    </div>
+   
+
+</div>

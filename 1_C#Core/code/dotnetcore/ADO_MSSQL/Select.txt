@@ -1,0 +1,19 @@
+
+System.Data.DataRow[] dr;
+dr=custdt.Select(textBox1.Text);
+System.Data.DataColumnCollection cols=custdt.Columns;
+System.Data.DataTable dt=new DataTable();
+foreach(DataColumn c in cols)
+	dt.Columns.Add(c.ColumnName );
+foreach (DataRow r in dr)
+{
+	DataRow nr=dt.NewRow();
+	nr.ItemArray =r.ItemArray;
+	dt.Rows.Add(nr);
+}
+dataGrid1.DataSource=dt;
+
+
+
+
+

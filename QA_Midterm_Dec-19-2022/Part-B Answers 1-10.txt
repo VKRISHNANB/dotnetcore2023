@@ -1,0 +1,105 @@
+Answers Part-B
+
+1)It is not necessary to put catch after try block, unless and until the try block is followed by a finally block.
+
+2)The members of exception class -getMessage(),printStackTrace(),toString(),getCause(),getStackTrace().
+
+3) It is possible for an exception object in C# to contain a nested Exception. In C# we can add a 
+nested exception by using the InnerException property of the Exception class.
+For Eg:
+try
+{
+  // Some code that might throw an exception
+}
+catch (Exception e)
+{
+    
+    throw new Exception("exception occurred", e);
+}
+
+
+4)
+try{ 
+
+      String username=”zlatan”; 
+
+    If(username.length<8){ 
+
+             throw new Exception(“Invalid name”);} 
+
+   catch(Exception e)} 
+
+5) Custom exceptions are are user defined exceptions thrown by the programmer.
+
+Eg:    Class Name{ 
+
+     private string name; 
+
+         public static void main(String [] args){ 
+
+                       public String name{ 
+
+                    get{ 
+                        return name 
+                         }
+                       set{ 
+
+                        if(value==null){ 
+
+                   throw new Exception(“Invalid username”);} 
+
+} 
+} 
+} 
+
+ 
+
+6) 
+a) select * from employee order by salary desc limit 2,1;
+b) select sum(salary),Dept from employee group by dept;
+c) select eno as Eno, name as Name,manager as managername from employee;
+
+
+7)var employees = from e in employeesList
+ where e.City == "Chennai" && e.Salary >= 25000 && e.Salary <= 50000 select e;
+
+9) There are several ways to pass data from one ASP.NET controller to another.
+   
+i)ViewData: You can use the viewData dictionary to pass data from one controller to another.
+Eg:// Source controller
+ViewData["key"] = value;
+
+// Destination controller
+var value = ViewData["key"];
+
+ii)TempData: You can use the TempData dictionary to pass data from one controller to another.
+Eg:// Source controller
+TempData["key"] = value;
+
+// Destination controller
+var value = TempData["key"];
+
+iii)RedirectToAction: You can use the RedirectToAction method to redirect the request from one 
+  controller to another and pass data using the query string. 
+Eg:// Source controller
+return RedirectToAction("ActionName", "ControllerName", new { key = value });
+
+// Destination controller
+public ActionResult ActionName(string key)
+{
+    var value = key;
+    // do something with the value
+    return View();
+}
+
+
+10)Normalization is the process of reducing the data redundancy in the database     
+   by Storing and Organizing  the data in more than one table with relations between them. 
+  -First Normal Form (1NF)
+  -Second Normal Form(2NF)
+  -Third Normal Form (3NF)
+  -Fourth Normal Form(4NF)
+  -Fifth Normal Form (5NF)
+  -Sixth Normal Form (6NF)
+
+

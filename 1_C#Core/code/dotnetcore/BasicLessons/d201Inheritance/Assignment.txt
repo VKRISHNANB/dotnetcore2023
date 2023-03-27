@@ -1,0 +1,8 @@
+﻿Create a Class called Vehicle
+	String RegNo
+	int ModelYear
+	String FuelType
+
+	Methods
+		Start(), Move(), Stop()
+Create a child Class Car	

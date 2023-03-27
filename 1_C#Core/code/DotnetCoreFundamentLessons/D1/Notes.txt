@@ -1,0 +1,44 @@
+﻿Adding a class with Static Methods
+Adding a class with Non-Static Methods
+Dot net Types:
+	System.Type
+	ValueType, Reference Type
+	Value Type
+		Struct
+		Enum
+	Reference Type
+		Class
+		Interfaces
+		Delegates
+		Arrays
+Working with Value Types
+		bit, byte, short, int, long , float, double, char, boolean
+Create a Struct
+Assignment 1:
+ Write a program that prints the numbers from 1 to 100. 
+ But for multiples of three print "Fizz" instead of the number and for the
+ multiples of five print "Buzz".
+ For numbers which are multiples of both
+ three and five print "FizzBuzz".
+
+Assignment 2:
+Swap 2 nos with out using a third variable or any pre defined function
+Swap(int x,int y)
+
+Assignment 3:
+	Create a program to provide an output like the following: 
+		1 
+	   212 
+	  32123 
+	 4321234 
+    543212345 
+   65432123456 
+  7654321234567 
+ 876543212345678
+98765432123456789   
+
+
+
+
+
+

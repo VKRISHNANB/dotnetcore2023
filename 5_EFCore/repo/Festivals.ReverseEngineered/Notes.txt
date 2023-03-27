@@ -1,0 +1,9 @@
+﻿Set the console application as the startup project
+Add the following package (powershell) to the console application: 
+	Microsoft.EntityFrameworkCore.Tools
+Load the Package Manager Console
+	>Tools>Nuget Package Manager > Package Manager Console
+Set the Default Project in Package Manager Console to the current class library Project where the Reverse Engineering has to be done
+For help on Powershell commands: PM>get-help entityframework
+Run Scaffold-DbContext command
+	PM>Scaffold-DbContext -provider Microsoft.EntityFrameworkCore.SqlServer -connection "<connectionstring>"

@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
+@{
+    ViewData["Title"] = "MultiActionView Page";
+}
+<div>
+    <h1>From Index View Before</h1>
+
+
+    @*<partial name="ChildList" />
+        <partial name="Display" />*@
+    @await Html.PartialAsync("ChildList")
+    @await Html.PartialAsync("Display")
+    @*Invoking an Action from Partial View using ViewComponent *@
+    @await Component.InvokeAsync("Display", new { section = "News" })
+    @Html.ActionLink("CallAdd", "Add", "Calk", new { x = 258, y = 6 })
+    <!--
+        To use a view component as a Tag Helper, register the assembly containing the view component using the @*@addTagHelper*@ directive.
+        If your view component is in an assembly called FirstMVC, to the _ViewImports.cshtml file add the following directive as a new line :
+        @*
+        @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+        @addTagHelper *, FirstMVC
+        *@
+        -->
+    <vc:display section="Sports"></vc:display>
+
+    <h1>From Index View After</h1>
+
+</div>

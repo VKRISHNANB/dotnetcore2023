@@ -1,0 +1,45 @@
+@model Aspnetmvcapp.Employee
+@{
+    ViewData["Title"] = "Create";
+}
+@* @section scripts {
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $("input.input-validation-error").closest(".form-group").addClass("has-danger");
+    });
+    </script>
+} *@
+<div>
+    <h3>Create New Employee</h3>
+</div>
+<hr/>
+<div>
+    <form asp-action="AddEmp" method="post">
+        <div asp-validation-summary="All" class = "text-danger"></div>
+        <div class="form-group">
+            <label asp-for="FirstName">Firstname:</label>
+            <div class="col-md-5">
+                <input asp-for="FirstName" class = "form-control"  />
+                <div><span asp-validation-for="FirstName" class="text-danger"></span></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="LastName">Lastname:</label>
+            <div class="col-md-5">
+                <input asp-for="LastName" class = "form-control"/>
+                <div><span asp-validation-for="LastName" class="text-danger"></span></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Salary">Salary:</label>
+            <div class="col-md-5">
+                <input asp-for="Salary" class = "form-control" />
+                <div><span asp-validation-for="Salary" class="text-danger"></span></div>
+            </div>
+        </div>
+        <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </div>   
+    </form>
+</div>

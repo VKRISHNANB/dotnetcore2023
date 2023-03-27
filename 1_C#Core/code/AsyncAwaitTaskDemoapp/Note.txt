@@ -1,0 +1,19 @@
+The async keyword does not make the code run asynchronously, and the await keyword doesn’t make the code wait.
+await keyword was introduced with c#5.
+But there maybe applications build before c#5 that may have used await as an identifier.
+For applications build by using c#5, it becomes necessary to inform the compiler that "await" is a keyword and not an identifier by using the keyword "async" .
+The async keyword just enables the use of await. 
+
+The thread cannot proceed until the result from the asynchronous operation is known; in other words, it can’t continue. 
+It creates a continuation. 
+All the code after the await statement forms a continuation, which runs when the asynchronous operation has completed, just like ContinuesWith. 
+By having the compiler build the continuation for you, you have preserved the program structure.
+
+
+The await keyword performs the following
+Registers a continuation with the asynchronous operation.
+• Gives up the current thread.
+• If SynchronizationContext.Current is non-null, ensures the continuation is Posted onto
+that context.
+• If SynchronizationContext.Current is null, the continuation is scheduled using the current task scheduler, which most likely will be the default scheduler, and thus schedules the continuation on a thread pool thread.
+• Coerces the result of the asynchronous operation, be it a good return value or an exception.

@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+        <h1>Welcome to Home Index</h1>
+        &#8377
+        <div>
+            @Html.ActionLink("Call Echo", "Echo",  new { name = "venkat", city = "chennai" })
+         
+        </div>
+        <div>
+            @Html.ActionLink("Call SayHello", "SayHello",new { name = "venkat" })
+        </div>
+        <!--
+            <p><a href="\Home\Echo">Echo1</a>
+            <a href="\Home\Echo?name=venkat&city=chennai">Echo2</a></p>
+            <a href="\Home\Echo?name=venkat&city=chennai">Echo2</a></p>
+            <p><a href="\Home\Echo/5">Echo3</a></p>
+            <p><a href="\Home\SayHello?name=Venkat">SayHello</a></p>
+        -->
+        <hr />
+         <div>
+            @Html.ActionLink("Book", "Index","Book")
+        </div>
+        <hr/>
+        <div>
+            <a href="\Calk\Add?x=50&y=10">Add</a>|
+            <a href="\Calk\Divide?x=50&y=10">Divide</a>|
+            <a href="\Calk\Multiply?x=50&y=10">Multiply</a>|
+            <a href="\Calk\Substract?x=50&y=10">Substract</a>|
+            @Html.ActionLink("Execute Add", "Add", "Calk", new { x = 50, y = 10 })
+        </div>
+        <hr />
+        <div>
+            @Html.ActionLink("Call MulltiActionView", "ChildList", "MulltiActionView");
+            <a href="\MulltiActionView">View from Multiple Actions</a>|
+            <a href="\PartialView">PartialView</a>
+        </div>
+</div>

@@ -1,0 +1,40 @@
+using System;
+using System.Reflection;
+public class Demo{
+public static void Main(String[] args) 
+{
+	Assembly a = Assembly.LoadFrom(args[0]);
+	Type[] types = a.GetTypes();
+	foreach(Type t in types)
+	{
+		Console.WriteLine(" Type..."+t.FullName) ;
+		MethodInfo[] methods = t.GetMethods() ;
+		foreach(MethodInfo m in methods)
+		{
+ 		 if  (m!=null)
+		  {            
+		   Console.WriteLine(" method..."+m.Name) ;
+		   ParameterInfo[] pa=m.GetParameters();
+			foreach(ParameterInfo p in pa)
+            		{
+			 if  (p!=null)
+			  {            
+			   Console.WriteLine(" Param..."+p.Name) ;
+		   	   }
+		   	  }
+		   if("Add"==m.Name)
+		   {
+		    if (t.IsClass && !t.IsAbstract){
+                      object o = Activator.CreateInstance(t);
+                      object[] param={10,2};
+                      String result=m.Invoke(o,param).ToString();
+		     Console.WriteLine("result "+ result );
+		     }
+		   }  
+  		  }else{
+                      Console.WriteLine( " Method Not Found");
+                  }
+		}
+	}
+}
+}

@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+     <NoWarn>0169;8019;CS0649;CS0414;CS0219;CS0168;CS1522;CS0618</NoWarn>
+  </PropertyGroup>
+
+</Project>

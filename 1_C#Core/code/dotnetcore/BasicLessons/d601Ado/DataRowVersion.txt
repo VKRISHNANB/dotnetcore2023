@@ -1,0 +1,24 @@
+Private Sub CheckVersionBeforeAccept()
+   Dim r As DataRow
+   Dim t As DataTable
+   t = CType(DataGrid1.DataSource, DataTable)
+   ' The user must click a cell to edit in the DataGrid control.
+   r = t.Rows(DataGrid1.CurrentCell.RowNumber)
+   r.BeginEdit
+   ' Change the value of column 1 in the row.
+   r(1) = Edit1.Text
+   ' Compare the proposed version with the current.
+   If r.HasVersion(datarowversion.Proposed) Then
+      If r(1, DataRowVersion.Current) Is r(1, DataRowversion.Proposed) Then
+         MessageBox.Show("The original and the proposed are the same")
+         r.CancelEdit
+         Exit Sub
+      Else
+         r.AcceptChanges
+         ' Print the original 
+      End If
+   Else
+      MessageBox.Show("No new values proposed")
+   End If
+End Sub
+

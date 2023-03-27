@@ -1,0 +1,108 @@
+﻿Introduction
+
+Can you write a method that does not care about arguments. I mean, can you pass an arbitrary number of arguments in that method? I suggest a C# keyword that does provide this type of facility, named "Params".
+
+The "Params" keyword allows passing a variable number arguments to a function.
+
+What does "Params" do?
+
+Using "Params", the arguments passed to a method are changed by the compiler to elements in a temporary array, and this array is then used to retrieve the method. To better clarify my point; I am try to explain an example in my thoughts about "Params".
+
+Suppose we have a "totalsal()" function that calculates the total salary of all the employees, no matter how many employee's salarys are passed.
+
+Why we use "Params"
+
+To explain this point, I will also use another example.
+
+I think you have already heard of the string class. The concat method, in case you have not heard of it, I will explain in one line, "this is used to concatenate two or more strings into one".
+
+For example
+
+string a ="abc";
+string b="xyz";
+
+string.Concat (a,b);
+
+This method does not care how many string agreements are passed for concatenation.
+
+For the purposes of the example above, you can say you are designing a library for other programmers to widely use.
+
+Example
+
+using System;
+
+using System.Collections.Generic;
+
+using System.Linq;
+
+using System.Text;
+
+using System.Threading.Tasks;
+
+ 
+
+namespace Params
+
+{
+
+    class Program
+
+    {
+
+        static void Main(string[] args)
+
+        {
+
+            ADDParameters(1);
+
+            ADDParameters(1, 2, 3, 4, 5);
+
+           ADDParameters1("sha","rad");
+
+           ADDParameters1("How", " are", " you", " ?");
+
+            Console.ReadKey();
+
+        }
+
+        //for interger calculation
+
+      public static void ADDParameters(params int[] arguemnts)
+
+        {
+
+            int add=0;
+
+            foreach (int argu in arguemnts)
+
+            {
+
+                add += argu;
+
+            }
+
+            Console.WriteLine(add);
+
+        }
+
+      public static void ADDParameters1(params string[] arguemnts)
+
+      {
+
+          string add="";
+
+          foreach (string argu in arguemnts)
+
+          {
+
+              add += argu;
+
+          }
+
+          Console.WriteLine(add);
+
+      }
+
+    }
+
+}

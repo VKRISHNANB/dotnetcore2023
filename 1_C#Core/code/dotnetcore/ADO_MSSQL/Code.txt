@@ -1,0 +1,101 @@
+//HASCHANGES
+	private void button1_Click(object sender, System.EventArgs e)
+	{
+		MessageBox.Show(dataSet1.HasChanges().ToString());
+	}
+//REJECTCHANGES
+	private void button2_Click(object sender, System.EventArgs e)
+	{
+		dataSet1.RejectChanges();
+		dataGrid1.DataSource=dataSet1;
+	}
+//GETCHANGES
+private void button3_Click(object sender, System.EventArgs e)
+{
+	System.Data.DataSet ds1=new System.Data.DataSet();
+	ds1=dataSet1.GetChanges();
+	dataGrid1.DataSource=ds1;
+}
+//WRITEXML
+private void button4_Click(object sender, System.EventArgs e)
+{
+        DataSet ds=(DataSet)dataGrid1.DataSource;
+	ds.WriteXml("Nwind.xml");
+	ds.WriteXmlSchema("Nwind.xsd");
+}
+//READXML
+private void button5_Click(object sender, System.EventArgs e)
+{
+	DataSet ds1=new System.Data.DataSet();
+	ds1.ReadXmlSchema("Nwind.xsd");  
+	ds1.ReadXml("Nwind.xml");
+	dataGrid1.DataSource=ds1;
+}
+//RowState
+
+   MessageBox.Show("Row " + dataSet1.Tables[0].Rows[0].RowState);
+
+//SQLCommandBuilder
+	SqlCommandBuilder cbd;
+	cbd=new SqlCommandBuilder(sqlDataAdapter1);
+	cbd.QuotePrefix ="[";
+	cbd.QuoteSuffix  ="]";
+	MessageBox.Show(cbd.GetInsertCommand().CommandText);
+	MessageBox.Show(cbd.GetSelectCommand().CommandText);
+	MessageBox.Show(cbd.GetDeleteCommand().CommandText);
+
+
+//BEGIN   TRANS
+SqlTransaction trans;
+private void button7_Click(object sender, System.EventArgs e)
+{
+	if (ConnectionState.Closed ==sqlConnection1.State)
+		{
+			sqlConnection1.Open();
+		}
+	SqlTransaction trans=sqlConnection1.BeginTransaction();
+		sqlDataAdapter1.SelectCommand.Transaction=trans;
+		sqlDataAdapter1.InsertCommand.Transaction=trans;
+		sqlDataAdapter1.UpdateCommand.Transaction=trans;
+		sqlDataAdapter1.DeleteCommand.Transaction=trans;
+	try
+	{
+		sqlDataAdapter1.Update(dataSet1,"Customers");
+		trans.Commit();
+	}
+	catch(System.Exception err)
+	{
+		MessageBox.Show(err.Message );
+		trans.Rollback();
+	}
+}
+//UPDATE
+private void button10_Click(object sender, System.EventArgs e)
+{
+	SqlDataAdapter da=new SqlDataAdapter();
+	SqlCommand cmd=sqlConnection1.createCommand();
+	SqlCommandBuilder cbd;
+	SqlTransaction trans;
+	if(sqlConnection1.State==ConnectionState.Closed)
+		sqlConnection1.Open();
+	trans=sqlConnection1.BeginTransaction();
+	cmd.Transaction=trans;
+try
+{
+		string name=dataSet1.Tables[0].TableName;
+		cmd.CommandText="select * from " +name; 
+		da.SelectCommand=cmd;
+		cbd=new SqlCommandBuilder(da);
+		cbd.QuotePrefix ="[";
+		cbd.QuoteSuffix  ="]";
+		da.Update(dataSet1,name);
+	}
+	trans.Commit();
+}catch(Exception err)
+{
+	MessageBox.Show(err.Message);
+	trans.RollBack();
+	dataSet1.RejectChanges();
+}
+}
+

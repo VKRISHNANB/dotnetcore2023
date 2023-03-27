@@ -1,0 +1,55 @@
+ADO.Net Type System
+
+ASSEMBLIES:
+	System.Data
+	System.Xml
+	System.XML.Schema
+NAMESPACES:
+	System.Data.SqlClient
+	System.Data.OLEDB
+	System.Data
+	System.Xml
+	System.xml.Schema
+INTERFACES:
+	IDbConnection
+	IDbCommand
+	IDataReader
+	IDataAdapter
+CLASSES:
+	SQLConnection
+	SQLCommand
+	SQLDataReader	
+	SQLDataAdapter
+	
+	DataSet
+		DataTable
+			DataRow
+			DataColumn
+		DataConstrain
+		DataRelationShip
+		DataView
+
+	OLEDBConncetion
+	OLEDBCommand
+	OLEDBDataReader
+	OLEDBDataAdapter
+COMMAND METHODS
+	ExecuteReader():DataReader
+	ExecuteScalar(): Object
+	ExecuteNonQuery():int
+DATAADAPTER METHODS
+		Fill(dataSet,"TableName")
+		Fill(dataTable)
+		Update(dataSet,"TableName")
+DATASET METHODS
+		HasChanges : bool
+		RejectChanges : void
+		GetChanges : DataSet
+		WriteXML : void
+		WriteXMLSchema : void
+		ReadXml : void
+		ReadXMLSchema : void
+		GetXml :string
+		GetXMLSchema  :string
+		AcceptChanges : void
+

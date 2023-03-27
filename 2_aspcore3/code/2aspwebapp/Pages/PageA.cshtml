@@ -1,0 +1,15 @@
+@page
+@model PageAModel
+@{
+    ViewData["Title"]="PageA";
+}
+<h1>PageA</h1>
+  <form method="post">
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.Name, 
+                            new { htmlAttributes = new { @class = "form-control" } }
+                            )
+            <input type="submit" id="btn">
+        </div>
+    </form>
+    <div>@ViewData["v1"]</div>

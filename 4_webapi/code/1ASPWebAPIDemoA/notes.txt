@@ -1,0 +1,21 @@
+ public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddControllersWithViews();
+            // var connString = Configuration.GetConnectionString("DefaultConnection");
+            var connString = @"server=VENKATHPDESKTOP\SQLEXPRESS;database=Sample;integrated security=true";
+            services.AddDbContext<SampleContext>(
+            options => options.UseSqlServer(connString));
+            
+        }
+
+    For MYSQL
+    https://www.nuget.org/packages/Pomelo.EntityFrameworkCore.MySql/5.0.0-alpha.2#supportedframeworks-body-tab
+    https://stackoverflow.com/questions/64614651/system-typeloadexception-method-create-in-type-mysql-data-entityframeworkcor
+
+    using Pomelo.EntityFrameworkCore.MySql;
+    In ConfigureServices method of Startup.cs add the following code:
+
+        var serverVersion = new MySqlServerVersion(new Version(8, 0, 26)); // Get the value from SELECT VERSION()
+        string connectionString = Configuration.GetConnectionString("DefaultConnection");
+        services.AddDbContext<AppDBContext>(c => c.UseMySql(connectionString, serverVersion));
+        services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDBContext>();

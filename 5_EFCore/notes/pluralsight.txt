@@ -1,0 +1,51 @@
+
+https://www.nuget.org/packages/
+	Microsoft.EntityFrameworkCore/3.1.0
+https://devblogs.microsoft.com/
+	dotnet/announcing-net-core-3-1/
+https://docs.microsoft.com/en-us/
+	dotnet/core/compatibility/3.0-3.1
+
+nuget:
+Add Packages:
+	Microsoft.EntityFrameworkCore.SqlServer v3.1.0
+	Microsoft.EntityFrameworkCore.Relational v3.1.0
+	Microsoft.EntityFrameworkCore v3.1.0
+Add
+	Custom DBContext
+	Entity classes
+	Add the connection string to the DBContext Class
+Test the Library from a Console application
+	P S V Main(...)
+	{
+		using (FestivalsDB db = new FestivalsDB())
+		{
+		System.Console.WriteLine(db.Database.EnsureCreated());
+			AddFestival(db);
+			GetFestival(db);
+		}
+	}
+========================================		
+Migration (Code First)
+To the console application Add package (powershell) : 
+		Microsoft.EntityFrameworkCore.Tools
+	
+Note: Set the console application as the startup project
+Run the "add-migration" command in the Package Manager Console
+	>Tools>Nuget Package Manager > Package Manager Console
+	Set the Default Project in Package Manager Console to the Project where the DBContext is present
+	Run: PM> Add-Migration Init
+	
+For help on Powershell commands
+	PM>get-help entityframework
+	Update-Database
+============================================
+Add Visual Studio Extension from Marketplace
+	Extensions>ManageExtensions> and install EF Core Power Tools
+Add DGML Editor
+	Tools>Get Tools and Features>Individual Components>Code Tools> enable DGML editor> install
+============================================
+Reverse Engineering 
+==========================================
+	
+	

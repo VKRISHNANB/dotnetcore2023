@@ -1,0 +1,52 @@
+Yes, ViewComponents have replaced the Html.RenderAction() method as the recommended way to call an action from a Razor view or page in ASP.NET Core.
+
+ViewComponents are similar to partial views, but they are more powerful because they can contain both markup and logic. They are also easier to reuse and test than partial views.
+
+To use a ViewComponent, you first need to create a class that derives from the ViewComponent base class. This class should contain the logic for your action.
+
+For example, if you have an action named "GetData" that returns a list of items, your ViewComponent class might look like this:
+
+public class GetDataViewComponent : ViewComponent
+{
+	private readonly IItemRepository _repository;
+
+	public GetDataViewComponent(IItemRepository repository)
+	{
+		_repository = repository;
+	}
+
+	public async Task<IViewComponentResult> InvokeAsync()
+	{
+		var items = await _repository.GetItemsAsync();
+		return View(items);
+	}
+}
+
+Next, you need to create a view for the ViewComponent, which will contain the markup to display the data. This view should be placed in the "Views/Shared/Components" folder, and should have the same name as the ViewComponent class (in this case, "GetData").
+
+The view might look something like this:
+
+@model IEnumerable<Item>
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.Name</li>
+    }
+</ul>
+Finally, you can call the ViewComponent from your Razor view or page using the Html.ViewComponent() method.
+
+@await Html.ViewComponent("GetData")
+
+You can also pass parameters to the ViewComponent by using an anonymous object as the second parameter to the method.
+
+@await Html.ViewComponent("GetData", new { id = 1 })
+
+Note that the Html.ViewComponent() method is asynchronous and requires the "await" keyword.
+
+For more information about ViewComponents, see the official ASP.NET Core documentation: https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-components?view=aspnetcore-3.1
+
+
+
+
+Try again

@@ -1,0 +1,8 @@
+﻿The management of the LearnMore University is planning to automate the student management system. 
+The University offers various curriculums to the students across the globe.
+Therefore, Steve Wilkinson, the programmer, has decided to create a Dotnet application.
+In the application, Steve needs to store student details, such as ID, name, date of birth, blood group, height, and marks details of the students. 
+As a future proposal for the automated system, the management wants to extend the system to manage its employee details too. 
+To provide medical benefits to the employees, the system needs to store the blood group and the height of the employee. 
+The application should accept student ID and name of the student as command-line parameters and display the student details. 
+Help Steve to develop the proposed application. 

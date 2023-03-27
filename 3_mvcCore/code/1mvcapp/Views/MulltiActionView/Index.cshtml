@@ -1,0 +1,13 @@
+﻿
+    <div> 
+        <h1>From Index View Before</h1>
+
+        @Html.Partial("ChildList") 
+        <partial name="ChildList" />
+        @Html.Partial("Display", new { section = "News" }) 
+        @Html.ActionLink("CallAdd","Add", "Calk", new { x= 258,y=6}) 
+        
+        <h1>From Index View After</h1>
+
+    </div>
+
