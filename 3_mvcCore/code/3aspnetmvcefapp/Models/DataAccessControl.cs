@@ -15,12 +15,12 @@ namespace aspnetmvcapp.Models
         public DataAccessControl(ILogger<DataAccessControl> logger,IConfiguration config)
         {
             _logger = logger;
-            _configuration= config;
+            _configuration = config;
         }
         public void Run()
         {
             string conString =_configuration.GetConnectionString("DefaultConnection");
-
+            _logger.Log(LogLevel.Information, conString, null);
             System.Console.WriteLine(conString);
         }
     }
