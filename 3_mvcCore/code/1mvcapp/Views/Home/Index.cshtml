@@ -25,16 +25,17 @@
         </div>
         <hr/>
         <div>
-            <a href="\Calk\Add?x=50&y=10">Add</a>|
-            <a href="\Calk\Divide?x=50&y=10">Divide</a>|
-            <a href="\Calk\Multiply?x=50&y=10">Multiply</a>|
-            <a href="\Calk\Substract?x=50&y=10">Substract</a>|
+            <div><a href="\Calk\Add?x=50&y=10">Add</a></div>
+            <div><a href="\Calk\Divide?x=50&y=10">Divide</a></div>
+            <div><a href="\Calk\Multiply?x=50&y=10">Multiply</a></div>
+            <div><a href="\Calk\Substract?x=50&y=10">Substract</a></div>
             @Html.ActionLink("Execute Add", "Add", "Calk", new { x = 50, y = 10 })
         </div>
         <hr />
         <div>
-            @Html.ActionLink("Call MulltiActionView", "ChildList", "MulltiActionView");
-            <a href="\MulltiActionView">View from Multiple Actions</a>|
+            <div> @Html.ActionLink("Call MulltiActionView", "ChildList", "MulltiActionView");</div>
+            <div> <a href="\MulltiActionView">View from Multiple Actions</a></div>
+            <div> <a href="\Movies\Start">PartialMoviesView</a></div>
             <a href="\PartialView">PartialView</a>
         </div>
 </div>

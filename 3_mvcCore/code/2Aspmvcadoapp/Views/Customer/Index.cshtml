@@ -3,40 +3,50 @@
     ViewData["Title"] = "Index";
 }
 <div>
-    Connection State:@ViewBag.Connextionstate
+    <div><a asp-action="Create" asp-controller="Customer">Create New Customer</a></div>
 </div>
-
+<div>
+    Customer Count:@ViewBag.CustomerCount
+</div>
  <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Id)
+                <label >Id</label>
+               @* @Html.DisplayNameFor(model => model.Id)*@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                <label>Name</label>
+                @*@Html.DisplayNameFor(model => model.Name)*@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EmailAddress)
+                <label>EmailAddress</label>
+                @*@Html.DisplayNameFor(model => model.EmailAddress)*@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Salary)
+                <label>Salary</label>
+                @*@Html.DisplayNameFor(model => model.Salary)*@
             </th>            
         </tr>
    
         @foreach (var item in Model)
         {
           <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EmailAddress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Salary)
-            </td>           
+              <td>
+                  <label >@item.Id</label>
+                  @*@Html.DisplayFor(modelItem => item.Id)*@
+              </td>
+              <td>
+                  <label >@item.Name</label>
+               @*   @Html.DisplayFor(modelItem => item.Name)*@
+              </td>
+              <td>
+                  <label >@item.EmailAddress</label>
+                @*  @Html.DisplayFor(modelItem => item.EmailAddress)*@
+              </td>
+              <td>
+                  <label >@item.Salary</label>
+                @*  @Html.DisplayFor(modelItem => item.Salary)*@
+              </td>           
           </tr>
         }
 </table>        

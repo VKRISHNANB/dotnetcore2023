@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.Data;
+using Aspmvcadoapp.Models;
 namespace Aspmvcadoapp
 {
     public class CustomerController : Controller
@@ -15,37 +16,34 @@ namespace Aspmvcadoapp
         }
         public IActionResult Index()
         {
-            var connString = @"server=VENKATHPDESKTOP\SQLEXPRESS;database=Sample;integrated security=true";
-            SqlConnection cn=new SqlConnection(connString);
-            cn.Open();
-            ViewBag.Connextionstate=cn.State;
-            SqlCommand selectcustomercmd=cn.CreateCommand();
-            selectcustomercmd.CommandText="Select * from customer";
-            List<Customer> clist=new List<Customer>();
-            SqlDataReader customerdr=selectcustomercmd.ExecuteReader();
-            
-            while(customerdr.Read())
-            {
-                Customer c=new Customer{
-                    Id=customerdr.GetInt32(0),
-                    Name=customerdr.GetString(1),
-                    EmailAddress=customerdr.GetString(2),
-                    Salary=customerdr.GetDecimal(3)
-                };
-                clist.Add(c);
-            }
+            List<Customer> clist = CustomerRepository.GetCustomerList();
+            ViewBag.CustomerCount = clist.Count;
             return View(clist);
         }
         [HttpGet]
         public IActionResult Create()
         {
-          
           return View();
         }
         [HttpPost]
         public IActionResult AddCustomer(Customer model)
         {
             //TODO: Implement Realistic Implementation
+            try
+            {
+                if (!TryValidateModel(model))
+                {
+                    return View("Create");
+                }
+                CustomerRepository.AddNewCustomer(model);
+            }
+            catch (Exception err)
+            {
+                ViewBag.Error = err.Message;
+                if (err.InnerException != null)
+                    ViewBag.InnerError = err.InnerException.Message;
+                return View("Create");
+            }
             return RedirectToAction("Index");
         }
     }

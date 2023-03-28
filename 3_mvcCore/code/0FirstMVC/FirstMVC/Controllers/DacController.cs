@@ -14,6 +14,8 @@ namespace FirstMVC.Controllers
     {
         private readonly ILogger<DacController> _logger;
         private readonly IConfiguration _configuration;
+        private readonly IDAC _dao;
+
         //public DacController(ILogger<DacController> logger, IConfiguration config)
         //{
         //    _logger = logger;
@@ -25,7 +27,6 @@ namespace FirstMVC.Controllers
             _configuration = config;
             _dao = dac;
         }
-        private readonly IDAC _dao;
 
         public IActionResult Index()
         {
