@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
+
 namespace ConsoleDataApp
 {
     class Program
@@ -8,6 +9,7 @@ namespace ConsoleDataApp
         {
             SqlConnection cn=new SqlConnection();
             Console.WriteLine("Hello World!");
+            System.Console.WriteLine($"Connection State:{cn.State}");
         }
     }
 }

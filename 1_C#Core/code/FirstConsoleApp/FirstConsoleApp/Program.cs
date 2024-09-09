@@ -4,6 +4,10 @@ namespace FirstConsoleApp
 {
     class Program
     {
+        private Program()
+        {
+            
+        }
         static void Main(string[] args)
         {
            

@@ -6,7 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.0.1" />
+  <!-- 
+warning NU1903: Package 'Microsoft.Data.SqlClient' 5.1.2 has a known high severity vulnerability
+https://github.com/advisories/GHSA-98g6-xh36-x2p7 -->
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.0.3" />
   </ItemGroup>
 
   <ItemGroup>
