@@ -1,9 +1,0 @@
-24 nov 2019
-==============
-struct,
-enum
-Late Binding , early binding
-Access Modifiears
-System.Object
-String
-
