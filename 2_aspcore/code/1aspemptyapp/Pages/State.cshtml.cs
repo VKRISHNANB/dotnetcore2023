@@ -10,6 +10,12 @@ namespace aspemptyapp.Pages
    
     public class StateModel : PageModel
     {
+        /**
+            the [BindProperty] attribute is used to bind a property of a model class to an incoming request parameter. This is particularly useful when working with Razor Pages and model binding.
+            Here Name is a BindProperty where as City is not.
+            - ASP.NET Core's model binding system automatically maps incoming request data (e.g., form fields, query string parameters, route data) to properties of a model class.
+            - The [BindProperty] attribute tells the model binding system to bind the decorated property to an incoming request parameter with the same name.
+        */
         [BindProperty]
         public String Name { get; set; } = "Un assigned";
         public String City { get; set; } = "City of No where";
@@ -24,17 +30,18 @@ namespace aspemptyapp.Pages
         }
         public void OnPostGet()
         {
-            ViewData["result"] = Name + " " + City;
+            ViewData["result"] = Name + "  " + City;
         }
         public void OnPostPageA()
         {
             String result = String.Empty;
-            /*Response.Redirect("PageA");*/
             result="Before Page Redirect \n";
-
-           /* this.RedirectPermanent("PageA");*/
-            result += "After Page Redirect";
             ViewData["result"] = result;
+
+            Response.Redirect("PageA");
+
+        //    this.RedirectPermanent("PageA");
+            // result += "After Page Redirect";
             
         }
     }

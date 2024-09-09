@@ -7,11 +7,11 @@
 <div>
     <form method="post">
         <div>
-            <label asp-for="Name">Name</label>
-            <input asp-for="Name" placeholder="Enter name" />
+            <label for="Name">Name</label>
+            <input name="Name" placeholder="Enter name" />
         </div>
         <div>
-            <label>City</label>
+            <label for="city">City</label>
             <input name="city" placeholder="Enter City" />
         </div>
         <div><input type="submit" asp-page-handler="Set" name="btn1" value="Set" /></div>
@@ -24,7 +24,7 @@
         if (ViewData["result"] != null)
         {
             String result = ViewData["result"].ToString();
-            String[] data = result.Split("\n");
+            String[] data = result.Split(" ");
             foreach (String s in data)
             {
                 <p>@s</p>
