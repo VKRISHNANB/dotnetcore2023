@@ -1,0 +1,31 @@
+﻿@using Microsoft.AspNetCore.Mvc.Rendering
+@{
+    ViewData["Title"] = "MultiActionView Page";
+}
+
+<div>
+    <div>
+        @*
+         @Html.Action("Score");
+        Calling an Action from a View to render Partial View Not Available in MVC Core
+        ChildActionOnlyAttribute, @Html.Action and @Html.RenderAction are not available in .NET Core MVC.
+        These are available as part of ASP.NET MVC framework.
+        ChildActionOnlyAttribute can be used from the namespace System.Web.Mvc.
+        Alternatively, in .NET Core MVC, you can use the View Components.
+        Here is the link to the MS Document:
+                https://learn.microsoft.com/en-us/aspnet/core/mvc/views/view-components?view=aspnetcore-2.1
+        *@
+        @*Invoking an Action from Partial View using ViewComponent *@
+        @await Component.InvokeAsync("Display", new { section = "News" })
+    </div>
+    <!--
+        To use a view component as a Tag Helper,
+        register the assembly containing the view component using the @*@addTagHelper*@ directive.
+    If your view component is in an assembly called FirstMVC, then to the _ViewImports.cshtml file add the following directive as a new line :
+    @*
+    @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+    @addTagHelper *, FirstMVC
+    *@
+    -->
+    <vc:display section="Sports"></vc:display>
+</div>
