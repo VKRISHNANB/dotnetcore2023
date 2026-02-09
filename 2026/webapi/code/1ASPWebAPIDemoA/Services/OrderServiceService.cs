@@ -26,9 +26,9 @@ namespace ASPWebAPIDemoA.Services
         }
         public List<OrderDetail> GetAllOrderDetailsByOrderId(int orderId)
         {
-            var details = (from orddetails in _NwindContext.OrderDetails
-                           where orddetails.OrderId == orderId
-                           select orddetails).ToList();
+            var details =  
+                System.Linq.Queryable.Where(_NwindContext.OrderDetails, orddetails => orddetails.OrderId == orderId)
+                .ToList();
             return details;
         }
     }
