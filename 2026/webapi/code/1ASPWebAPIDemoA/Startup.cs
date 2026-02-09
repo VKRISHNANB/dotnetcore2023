@@ -31,22 +31,23 @@ namespace ASPWebAPIDemoA
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddCors(c =>
+            services.AddCors(options =>
             {
-                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+                options.AddPolicy("AllowOrigin", builder =>
+                    builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             });
-            services.AddControllers();
+
+            services.AddControllers()
+                .AddNewtonsoftJson(options =>
+                    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
             var sampledbconnString = Configuration.GetConnectionString("SampledbConnection");
             var nwinddbconnString = Configuration.GetConnectionString("NwinddbConnection");
-            services.AddDbContext<SampleContext>(
-                     options => options.UseSqlServer(sampledbconnString));
-            services.AddDbContext<NwindContext>(
-                    options => options.UseSqlServer(nwinddbconnString));
+
+            services.AddDbContext<SampleContext>(options => options.UseSqlServer(sampledbconnString));
+            services.AddDbContext<NwindContext>(options => options.UseSqlServer(nwinddbconnString));
+
             services.AddScoped<OrderService>();
-            services.AddControllers().AddNewtonsoftJson(options =>
-    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
-);
-          
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,7 +61,9 @@ namespace ASPWebAPIDemoA
             app.UseHttpsRedirection();
 
             app.UseRouting();
-            app.UseCors(options => options.AllowAnyOrigin());
+
+            app.UseCors("AllowOrigin");
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
