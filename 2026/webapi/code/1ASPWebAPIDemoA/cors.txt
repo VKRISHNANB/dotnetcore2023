@@ -1,0 +1,13 @@
+﻿A. NuGet package: "Microsoft.AspNetCore.Cors"
+
+B. Startup.cs:
+	1. In the ConfigureServices() method
+	    services.AddCors(c =>
+        {
+            c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+        });
+    2.  Add following code after app.UseMvc(), before app.UseAuthorization() line in the Configure() method
+            app.UseCors(options => options.AllowAnyOrigin());
+
+C. In the controller 
+    [EnableCors("AllowOrigin")]

@@ -1,0 +1,25 @@
+EF Core Mapping
+----------------
+Many to Many
+	https://blog.oneunicorn.com/2017/09/25/many-to-many-relationships-in-ef-core-2-0-part-1-the-basics/
+	
+One to One
+	Note:
+	If both the classes in the 1-1 relationship have Navigation properties but,
+	do not have the foreignkeys then EFCore will not know which is the Principle and which is the dependent . So we have to provide modelBuilder.Entity<..>HasOne(..).WithOne(..).IsRequired() in the OnModelCreating(..) of the DBContext
+	
+	Add a new dependent row directly to the table by passing just the principles ID
+Shadow properties for database
+	1.What are Shadow Properties?
+	Shadow properties are most often used for foreign key properties, where the relationship between two entities is represented by a foreign key value in the database, but the relationship is managed on the entity types using navigation properties between the entity types. 
+	By convention, EF will introduce a shadow property when a relationship is discovered but no foreign key property is found in the dependent entity class.
+	2. Define Shadow properties in mappings
+	3. Populate Shadow properties
+	4. Use or retrieve shadow properties in queries
+	5. Real-world use
+	
+Owned types for complex types and value objects
+
+Data seeding
+	https://docs.microsoft.com/en-us/ef/core/modeling/data-seeding
+	https://www.learnentityframeworkcore.com/migrations/seeding
